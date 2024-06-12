@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    modName = "modDemo"
+}
+
+group = 'realmtech.mod'
+version = '1.0-SNAPSHOT'
+
+sourceSets.main.resources.srcDirs = ["./src/assets"]
+project.ext.assetsDir = new File("./src/assets")
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'RealmTech:desktop:0.2.0-dev'
+}
+
+
+task dist(type: Jar) {
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    archiveFileName = modName.capitalize() + ".jar"
+    with jar
+}
