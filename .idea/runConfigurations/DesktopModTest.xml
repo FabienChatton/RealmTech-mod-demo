@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TestMod" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="realmtech.mod.launcher.Main" />
+  <configuration default="false" name="DesktopModTest" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="realmtech.mod.launcher.Desktop" />
     <module name="RealmTechModDemo.main" />
     <option name="PROGRAM_PARAMETERS" value="-r ." />
     <extension name="coverage">
